@@ -1,10 +1,19 @@
 /* eslint-disable @next/next/no-page-custom-font */
 import { ColorScheme, ColorSchemeProvider, MantineProvider } from '@mantine/core';
 // import { NotificationsProvider } from '@mantine/notifications';
+// import { GoogleAnalyticTag } from '@components/google-analytics-tag';
 import { setCookie } from 'cookies-next';
 import { NextSeo } from 'next-seo';
 import { AppProps } from 'next/app';
+import dynamic from 'next/dynamic';
 import { useState } from 'react';
+
+const GoogleAnalyticTag = dynamic<{}>(
+  () => import('@components/google-analytics-tag').then((mod) => mod.GoogleAnalyticTag),
+  {
+    ssr: false,
+  }
+);
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;
@@ -22,6 +31,7 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
         title="Crypto Insights"
         description="Welcome to Crypto Insights, the news and information hub for the cryptocurrency market. Here you will find a wide variety of articles covering the latest developments in crypto, predictions on future price movements and much more."
       />
+      <GoogleAnalyticTag />
 
       <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
         <MantineProvider
