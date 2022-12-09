@@ -2,8 +2,8 @@
 import { ColorScheme, ColorSchemeProvider, MantineProvider } from '@mantine/core';
 // import { NotificationsProvider } from '@mantine/notifications';
 import { setCookie } from 'cookies-next';
+import { NextSeo } from 'next-seo';
 import { AppProps } from 'next/app';
-import Head from 'next/head';
 import { useState } from 'react';
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
@@ -18,17 +18,10 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
 
   return (
     <>
-      <Head>
-        <title>Crypto Insights</title>
-        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
-        <link rel="shortcut icon" href="/favicon.svg" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Noto+Sans:wght@300&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
+      <NextSeo
+        title="Crypto Insights"
+        description="Welcome to Crypto Insights, the news and information hub for the cryptocurrency market. Here you will find a wide variety of articles covering the latest developments in crypto, predictions on future price movements and much more."
+      />
 
       <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
         <MantineProvider

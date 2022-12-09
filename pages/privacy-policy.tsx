@@ -5,9 +5,9 @@ const PrivacyPolicy = () => (
   <MainLayout>
     <h1>Privacy Policy for Crypto insights</h1>
     <p>
-      At cryptoinsights, accessible from https://www.cryptoinsights.com, one of our main priorities
-      is the privacy of our visitors. This Privacy Policy document contains types of information
-      that is collected and recorded by cryptoinsights and how we use it.
+      At cryptoinsights, accessible from https://www.cryptoinsights.space, one of our main
+      priorities is the privacy of our visitors. This Privacy Policy document contains types of
+      information that is collected and recorded by cryptoinsights and how we use it.
     </p>
     <p>
       If you have additional questions or require more information about our Privacy Policy, do not
